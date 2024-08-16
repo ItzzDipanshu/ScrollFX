@@ -1,29 +1,30 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 
 const Work = () => {
   const [elems, setElems] = useState([
     {
-      heading: "Dipanshu Singh Rathore",
-      subheading: "Lorem ipsum dolor sit.",
-      video: "/effectVideo1.mp4",
+      heading: "Obys",
+      subheading: "Website clone",
+      video: "/workVideo1.mp4",
+      image: "effectImg1.jpg",
+    },
+    {
+      heading: "CineStar",
+      subheading: "Movie application",
+      video: "/workVideo2.mp4",
       image: "/effectImg1.jpg",
     },
     {
-      heading: "Dipanshu Singh Rathore",
-      subheading: "Lorem ipsum dolor sit.",
-      video: "/effectVideo1.mp4",
+      heading: "Beatolution",
+      subheading: "Music application",
+      video: "/workVideo3.mp4",
       image: "/effectImg1.jpg",
     },
     {
-      heading: "Dipanshu Singh Rathore",
-      subheading: "Lorem ipsum dolor sit.",
-      video: "/effectVideo1.mp4",
-      image: "/effectImg1.jpg",
-    },
-    {
-      heading: "Dipanshu Singh Rathore",
-      subheading: "Lorem ipsum dolor sit.",
-      video: "/effectVideo1.mp4",
+      heading: "Cli-Mate",
+      subheading: "Weather application",
+      video: "/workVideo1.mp4",
       image: "/effectImg1.jpg",
     },
   ]);
@@ -48,7 +49,17 @@ const Work = () => {
           <h3 className="capitalize">featured projects</h3>
         </div>
         <div>
-          <h1 className="capitalize text-6xl sm:text-[15rem] sm:leading-none sm:tracking-tight my-5">Work</h1>
+          <h1 className="capitalize text-6xl sm:text-[15rem] sm:leading-none sm:tracking-tight my-5 overflow-hidden">
+            <motion.span
+              initial={{ rotate: 90, y: "40%", opacity: 0 }}
+              whileInView={{ rotate: 0, y: 0, opacity: 1 }}
+              transition={{ ease: [0.22, 1, 0.36, 1], duration: 1 }}
+              viewport={{ once: true }} // Is se animation baar baar nhi chalega
+              className="inline-block origin-left"
+            >
+              Work
+            </motion.span>
+          </h1>
           <p className="leading-2">
             Highlights of cases that we passionately build with forward-thinking
             clients and friends over the years.
@@ -59,8 +70,12 @@ const Work = () => {
             return (
               <div key={i} className="elem w-full sm:w-[48%] mt-10">
                 <div className="video relative overflow-hidden w-full h-[104vw] sm:h-[50vw]">
-                  <img
-                    className="hidden sm:block w-full h-full object-cover"
+                  <motion.img
+                    initial={{ opacity: 1 }}
+                    whileHover={{ opacity: 0 }}
+                    data-scroll
+                    data-scroll-speed="-0.2"
+                    className="hidden sm:absolute sm:z-[2] sm:top-0 sm:left-0 sm:block w-full h-full object-cover"
                     src={item.image}
                     alt=""
                   />
@@ -68,17 +83,13 @@ const Work = () => {
                     autoPlay
                     muted
                     loop
-                    className="block sm:hidden w-full h-full absolute scale-[2.5] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                    className="block z-[1] w-full h-full absolute scale-[1.5] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                     src={item.video}
                   ></video>
                 </div>
                 <div className="mt-4">
-                  <h3 className="font-semibold capitalize">
-                    {item.heading}
-                  </h3>
-                  <h3 className="capitalize opacity-65">
-                    {item.subheading}
-                  </h3>
+                  <h3 className="font-semibold capitalize">{item.heading}</h3>
+                  <h3 className="capitalize opacity-65">{item.subheading}</h3>
                 </div>
               </div>
             );
