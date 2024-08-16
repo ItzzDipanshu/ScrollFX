@@ -16,7 +16,7 @@ const Navbar = () => {
           viewport={{ once: true }} // This will make sure that it will animate only once
           className="logo"
         >
-          <img className="w-20 sm:w-32" src="/scrollFX.png" alt="" />
+          <img className="w-20 sm:w-32 mix-blend-difference" src="/scrollFX.png" alt="" />
         </motion.div>
 
         <motion.span
@@ -33,7 +33,7 @@ const Navbar = () => {
           transition={{ ease: Power4.easeInOut, duration: 1 }}
           className="links hidden sm:flex gap-10"
         >
-          {["Home", "About", "Contact"].map((item, index) => (
+          {["Home", "Work", "Contact"].map((item, index) => (
             <a key={index} className="text-sm font-light">
               {item}
             </a>

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, stagger } from "framer-motion";
-import { Power4 } from "gsap/all";
+import gsap, { Power4, ScrollTrigger } from "gsap/all";
 
 const Landing = () => {
+
   return (
-    <div className="relative w-full h-[150vh] sm:h-[270vh]">
+    <div className="relative w-full h-[150vh] sm:h-[200vh] md:h-[250vh]">
 
         {/* As we know, a negative value slows down the speed of the element to which the data-scroll-speed attribute is applied. In the scenario below, we applied data-scroll specifically to the image tag rather than the entire div. This is because, if applied to the div, it would cause the div to move slowly, resulting in the next section overlapping and disrupting the layout. To prevent this, we applied data-scroll to the image itself and set the div to overflow: hidden. Without the overflow setting, the image could extend beyond the div’s boundaries, creating an undesirable visual effect. With the overflow: hidden in place, any part of the image that moves slower and extends outside the div will be hidden, ensuring a clean and appealing appearance. */}
 
@@ -20,8 +21,8 @@ const Landing = () => {
       <div className="w-full absolute top-0">
         {" "}
         {/* after applying the absolute property to the below div. the max-w-screen-2xl property won't work. That's why we had made an another div for the absolute property. */}
-        <div className="text max-w-screen-2xl h-full mx-auto px-5 sm:px-10 text-white">
-          <div className="para mt-72 sm:mt-[25rem]">
+        <div className="text max-w-screen-2xl h-full mx-auto px-5 md:px-10 text-white">
+          <div className="para mt-72 sm:mt-[15rem]">
             {[
               "I am a passionate front-end developer",
               "focused on creating visually engaging and",
@@ -32,7 +33,7 @@ const Landing = () => {
               return (
                 <p
                   key={index}
-                  className="font-semibold sm:text-4xl sm:font-light overflow-hidden"
+                  className="font-semibold sm:text-2xl md:text-4xl sm:font-light overflow-hidden"
                 >
                   <motion.span
                     initial={{ rotate: 90, y: "100%", opacity: 0 }}
@@ -50,9 +51,9 @@ const Landing = () => {
               );
             })}
           </div>
-          <div className="headings mt-5 sm:mt-10">
+          <div className="headings mt-5 md:mt-10">
             {["Captivating", "Digital", "Experiences"].map((item,i)=>{
-                return <h1 key={i} className="text-6xl sm:text-[18rem] sm:font-light tracking-tighter leading-none overflow-hidden pb-11">
+                return <h1 key={i} className="text-6xl sm:text-9xl md:text-[15rem] sm:font-light tracking-tighter leading-none overflow-hidden pb-11">
                 <motion.span
                   initial={{ rotate: 90, y: "100%", opacity: 0 }}
                   animate={{ rotate: 0, y: 0, opacity: 1}}
@@ -65,7 +66,7 @@ const Landing = () => {
             })}
             
           </div>
-          <div className="para2 sm:w-1/3 mt-10 sm:mt-20">
+          <div className="para2 md:w-1/3 mt-10 md:mt-20">
             <p className="sm:text-xl">I am committed to bringing innovative</p>
             <p className="sm:text-xl">
               ideas by creating engaging, user-centric

@@ -7,25 +7,25 @@ const Work = () => {
       heading: "Obys",
       subheading: "Website clone",
       video: "/workVideo1.mp4",
-      image: "effectImg1.jpg",
+      image: "workImg1.jpg",
     },
     {
       heading: "CineStar",
       subheading: "Movie application",
       video: "/workVideo2.mp4",
-      image: "/effectImg1.jpg",
+      image: "/workImg2.jpg",
     },
     {
       heading: "Beatolution",
       subheading: "Music application",
       video: "/workVideo3.mp4",
-      image: "/effectImg1.jpg",
+      image: "/workImg3.jpg",
     },
     {
       heading: "Cli-Mate",
       subheading: "Weather application",
       video: "/workVideo1.mp4",
-      image: "/effectImg1.jpg",
+      image: "/workImg4.jpg",
     },
   ]);
 
@@ -49,7 +49,7 @@ const Work = () => {
           <h3 className="capitalize">featured projects</h3>
         </div>
         <div>
-          <h1 className="capitalize text-6xl sm:text-[15rem] sm:leading-none sm:tracking-tight my-5 overflow-hidden">
+          <h1 className="capitalize text-6xl sm:text-8xl md:text-[15rem] sm:leading-none sm:tracking-tight my-5 overflow-hidden">
             <motion.span
               initial={{ rotate: 90, y: "40%", opacity: 0 }}
               whileInView={{ rotate: 0, y: 0, opacity: 1 }}
@@ -60,21 +60,20 @@ const Work = () => {
               Work
             </motion.span>
           </h1>
-          <p className="leading-2">
-            Highlights of cases that we passionately build with forward-thinking
-            clients and friends over the years.
+          <p className="leading-2 sm: text-xl">
+          Showcasing my portfolio of diverse projects, each reflecting my skills in web development
           </p>
         </div>
-        <div className="elements mt-10 sm:flex sm:gap-5 sm: flex-wrap">
+        <div className="elements mt-10 sm:flex sm:gap-20 sm: flex-wrap">
           {elems.map((item, i) => {
             return (
-              <div key={i} className="elem w-full sm:w-[48%] mt-10">
-                <div className="video relative overflow-hidden w-full h-[104vw] sm:h-[50vw]">
+              <div key={i} className="elem w-full sm:w-[40%] mt-10">
+                <div className="video relative overflow-hidden w-full h-[104vw] sm:h-[55vw]">
                   <motion.img
                     initial={{ opacity: 1 }}
                     whileHover={{ opacity: 0 }}
                     data-scroll
-                    data-scroll-speed="-0.2"
+                    data-scroll-speed="-0.5"
                     className="hidden sm:absolute sm:z-[2] sm:top-0 sm:left-0 sm:block w-full h-full object-cover"
                     src={item.image}
                     alt=""
@@ -88,7 +87,7 @@ const Work = () => {
                   ></video>
                 </div>
                 <div className="mt-4">
-                  <h3 className="font-semibold capitalize">{item.heading}</h3>
+                  <h3 className="font-semibold sm:text-3xl capitalize">{item.heading}</h3>
                   <h3 className="capitalize opacity-65">{item.subheading}</h3>
                 </div>
               </div>
