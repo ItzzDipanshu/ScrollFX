@@ -64,16 +64,16 @@ const Work = () => {
           Showcasing my portfolio of diverse projects, each reflecting my skills in web development
           </p>
         </div>
-        <div className="elements mt-10 sm:flex sm:gap-20 sm: flex-wrap">
+        <div className="elements mt-10 sm:flex sm:gap-40 sm: flex-wrap">
           {elems.map((item, i) => {
             return (
               <div key={i} className="elem w-full sm:w-[40%] mt-10">
-                <div className="video relative overflow-hidden w-full h-[104vw] sm:h-[55vw]">
+                <div className="video relative overflow-hidden w-full h-[104vw] sm:h-[40vw]">
                   <motion.img
                     initial={{ opacity: 1 }}
                     whileHover={{ opacity: 0 }}
                     data-scroll
-                    data-scroll-speed="-0.5"
+                    data-scroll-speed="-0.1"
                     className="hidden sm:absolute sm:z-[2] sm:top-0 sm:left-0 sm:block w-full h-full object-cover"
                     src={item.image}
                     alt=""
@@ -82,7 +82,7 @@ const Work = () => {
                     autoPlay
                     muted
                     loop
-                    className="block z-[1] w-full h-full absolute scale-[1.5] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                    className="block z-[1] w-full h-full absolute scale-[1.7] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                     src={item.video}
                   ></video>
                 </div>

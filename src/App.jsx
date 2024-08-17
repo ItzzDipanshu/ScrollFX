@@ -5,6 +5,8 @@ import Work from "./Components/Work";
 import Playreel from "./Components/Playreel";
 import ImageAnime from "./Components/ImageAnime";
 import LocomotiveScroll from 'locomotive-scroll';
+import Contact from "./Components/Contact";
+
 
 
 
@@ -20,6 +22,7 @@ const App = ()=>{
       <Work />
       <Playreel />
       <ImageAnime />
+      <Contact />
     </div>
   )
 }
